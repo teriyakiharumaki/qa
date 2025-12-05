@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  answer: MyText
+  category: MyString
+  is_starred: false
+
+two:
+  content: MyText
+  answer: MyText
+  category: MyString
+  is_starred: false
