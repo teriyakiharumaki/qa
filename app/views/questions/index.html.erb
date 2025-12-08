@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<% content_for :title, "Questions" %>
+<% content_for :title, "一問一答" %>
 
-<h1>Questions</h1>
+<h1>一問一答</h1>
 
 <div id="questions">
   <% @questions.each do |question| %>
@@ -13,4 +13,4 @@
   <% end %>
 </div>
 
-<%= link_to "New question", new_question_path %>
+<%= link_to "新しい問題を作る", new_question_path %>
