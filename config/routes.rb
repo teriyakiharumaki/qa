@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "static#top"
+  get "static/top"
   resources :questions
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
