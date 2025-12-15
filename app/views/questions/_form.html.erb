@@ -1,9 +1,10 @@
-<%= form_with(model: question) do |form| %>
+<%= form_with(model: question, class: "space-y-6") do |form| %>
   <% if question.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
+    <div class="alert alert-error">
+      <h2 class="font-bold">
+        <%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:
+      </h2>
+      <ul class="list-disc list-inside text-sm">
         <% question.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,27 +12,43 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content %>
+  <div class="form-control w-full">
+    <%= form.label :content, class: "label" do %>
+      <span class="label-text">質問文</span>
+    <% end %>
+    <%= form.text_area :content,
+          rows: 4,
+          class: "textarea textarea-bordered w-full" %>
   </div>
 
-  <div>
-    <%= form.label :answer, style: "display: block" %>
-    <%= form.textarea :answer %>
+  <div class="form-control w-full">
+    <%= form.label :answer, class: "label" do %>
+      <span class="label-text">回答</span>
+    <% end %>
+    <%= form.text_area :answer,
+          rows: 6,
+          class: "textarea textarea-bordered w-full" %>
   </div>
 
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
+  <div class="form-control w-full max-w-xs">
+    <%= form.label :category, class: "label" do %>
+      <span class="label-text">カテゴリ</span>
+    <% end %>
+    <%= form.text_field :category,
+          placeholder: "例: 技術 / 自己紹介 / 志望理由 など",
+          class: "input input-bordered w-full" %>
   </div>
 
-  <div>
-    <%= form.label :is_starred, style: "display: block" %>
-    <%= form.checkbox :is_starred %>
+  <div class="form-control">
+    <label class="label cursor-pointer">
+      <span class="label-text">重要な質問としてマークする（★）</span>
+      <%= form.check_box :is_starred,
+            class: "checkbox checkbox-primary ml-2" %>
+    </label>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-control mt-4">
+    <%= form.submit "保存する",
+          class: "btn btn-primary" %>
   </div>
 <% end %>

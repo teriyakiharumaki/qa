@@ -1,12 +1,14 @@
-<% content_for :title, "Editing question" %>
+<div class="max-w-lg mx-auto">
+  <% content_for :title, "Editing question" %>
 
-<h1>編集</h1>
+  <h1>編集</h1>
 
-<%= render "form", question: @question %>
+  <%= render "form", question: @question %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "詳細", @question %> |
-  <%= link_to "一問一答一覧", questions_path %>
+  <div>
+    <%= link_to "詳細", @question %> |
+    <%= link_to "一問一答一覧", questions_path %>
+  </div>
 </div>
