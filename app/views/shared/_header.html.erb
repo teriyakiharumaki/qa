@@ -3,9 +3,9 @@
     <%= link_to "一問一答アプリ", root_path, class: "btn btn-ghost text-xl" %>
   </div>
   <div class="navbar-end">
-    <ul class="menu menu-horizontal px-1">
-      <li><%= link_to "問題一覧", questions_path %></li>
-      <li><%= link_to "問題作成", new_question_path %></li>
+    <ul class="menu menu-horizontal px-1 gap-x-2">
+      <li><%= link_to "問題一覧", questions_path, class: "btn" %></li>
+      <li><%= link_to "問題作成", new_question_path, class: "btn" %></li>
     </ul>
   </div>
 </header>
