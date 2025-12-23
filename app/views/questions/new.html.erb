@@ -1,7 +1,8 @@
 <% content_for :title, "New question" %>
 
-<div class="flex w-full flex-col">
-  <div class="text-2xl">新規作成</div>
+<div class="flex flex-col w-full">
+  <div class="font-bold text-2xl">新規作成</div>
+  <div class="divider divider-neutral"></div>
 </div>
 
 <%= render "form", question: @question %>
@@ -9,5 +10,5 @@
 <br>
 
 <div>
-  <%= link_to "一問一答一覧", questions_path %>
+  <%= link_to "一問一答一覧", questions_path, class: "btn" %>
 </div>

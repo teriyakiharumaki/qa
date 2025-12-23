@@ -1,8 +1,12 @@
 
 <% content_for :title, "Editing question" %>
 
-<div class="flex w-full flex-col">
-  <div class="text-2xl">編集</div>
+<div class="flex justify-between items-center w-full">
+  <div class="font-bold text-2xl">問題編集</div>
+  <div class="flex gap-x-2">
+    <%= link_to "詳細", @question, class: "btn btn-outline btn-accent" %>
+    <%= button_to "削除", @question, method: :delete, class: "btn btn-outline btn-error" %>
+  </div>
 </div>
 
 <%= render "form", question: @question %>
@@ -10,6 +14,5 @@
 <br>
 
 <div>
-  <%= link_to "詳細", @question %> |
-  <%= link_to "一問一答一覧", questions_path %>
+  <%= link_to "一問一答一覧", questions_path, class: "btn" %>
 </div>
