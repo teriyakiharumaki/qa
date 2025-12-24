@@ -4,7 +4,7 @@
   <div class="font-bold text-2xl">問題詳細</div>
   <div class="flex gap-x-2">
     <%= link_to "編集", edit_question_path(@question), class: "btn btn-outline btn-success" %>
-    <%= button_to "削除", @question, method: :delete, class: "btn btn-outline btn-error" %>
+    <%= button_to "削除", @question, method: :delete, class: "btn btn-outline btn-error", data: { turbo_confirm: "削除しますか？" } %>
   </div>
 </div>
 
