@@ -1,8 +1,12 @@
-<div class="flex flex-col w-full">
-  <div class="font-bold text-2xl">ようこそ一問一答アプリへ！</div>
-  <div class="divider divider-neutral"></div>
+<div class="hero">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold py-6">ようこそ！</h1>
+      <h1 class="text-5xl font-bold">一問一答アプリへ！</h1>
+      <p class="py-6">
+        一問一答ができるアプリです
+      </p>
+      <%= link_to "質問一覧へ", questions_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
-
-<p>
-  <%= link_to "質問一覧へ", questions_path, class: "btn" %>
-</p>
