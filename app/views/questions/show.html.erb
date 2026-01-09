@@ -12,7 +12,23 @@
   <div class="divider divider-neutral"></div>
 </div>
 
-<%= render @question %>
+<div class="my-8">
+  <div class="card">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-bold"><%= @question.content %></h2>
+      <button class="btn" onclick="my_modal_<%= @question.id %>.showModal()">回答を見る</button>
+      <dialog id="my_modal_<%= @question.id %>" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h3 class="text-lg font-bold">回答</h3>
+          <%= @question.answer %>
+        </div>
+      </dialog>
+    </div>
+  </div>
+</div>
 
 <div class="w-full">
   <div class="divider divider-neutral"></div>
