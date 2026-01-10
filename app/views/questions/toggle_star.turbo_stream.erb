@@ -1,0 +1,3 @@
+<%= turbo_stream.replace dom_id(@question, :star) do %>
+  <%= render "star", question: @question %>
+<% end %>

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   root "static#top"
   get "static/top"
-  resources :questions
+  resources :questions do
+    member do
+      patch :toggle_star
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

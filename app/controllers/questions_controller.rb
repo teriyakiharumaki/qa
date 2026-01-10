@@ -57,6 +57,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def toggle_star
+    @question = Question.find(params[:id])
+    @question.update!(is_starred: !@question.is_starred)
+  
+    respond_to do |format|
+      format.turbo_stream
+      format.html { redirect_to questions_path, notice: "更新しました" }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
